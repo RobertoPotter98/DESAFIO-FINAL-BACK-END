@@ -1,0 +1,42 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container mt-4">
+
+    <div class="alert alert-success" role="alert">
+
+        <h4 class="alert-heading">
+            ✅ Sucesso!
+        </h4>
+
+        <p>
+            O paciente foi cadastrado com sucesso e já está disponível no sistema.
+        </p>
+
+        <hr>
+
+        <p class="mb-0">
+            Você pode visualizar a lista de pacientes ou realizar um novo cadastro.
+        </p>
+
+    </div>
+
+    <a
+        href="/pacientes/lst"
+        class="btn btn-primary me-2">
+
+        Ver Lista de Pacientes
+
+    </a>
+
+    <a
+        href="/pacientes/add"
+        class="btn btn-outline-secondary">
+
+        Cadastrar Novo Paciente
+
+    </a>
+
+</div>
+
+<%- include('../partials/footer') %>

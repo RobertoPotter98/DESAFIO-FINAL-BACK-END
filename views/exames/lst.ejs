@@ -1,0 +1,93 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Lista de Exames</h2>
+
+        <a href="/exames/add" class="btn btn-primary">
+            Novo Exame
+        </a>
+    </div>
+
+    <% if (exames.length === 0) { %>
+
+        <div class="alert alert-info">
+            Nenhum exame cadastrado.
+        </div>
+
+    <% } else { %>
+
+        <div class="table-responsive">
+
+            <table class="table table-striped table-hover align-middle">
+
+                <thead class="table-dark">
+                    <tr>
+                        <th>Paciente</th>
+                        <th>Tipo de Exame</th>
+                        <th>Data</th>
+                        <th>Resultado</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <% exames.forEach(exame => { %>
+
+                        <tr>
+
+                            <td>
+                                <%= exame.paciente ? exame.paciente.nome : 'Sem paciente' %>
+                            </td>
+
+                            <td>
+                                <%= exame.tipo %>
+                            </td>
+
+                            <td>
+                                <%= exame.data
+                                    ? new Date(exame.data).toLocaleDateString('pt-BR', {
+                                        timeZone: 'UTC'
+                                    })
+                                    : '' %>
+                            </td>
+
+                            <td>
+                                <%= exame.resultado || 'Não informado' %>
+                            </td>
+
+                            <td>
+
+                                <a
+                                    href="/exames/edt/<%= exame._id %>"
+                                    class="btn btn-warning btn-sm">
+                                    Editar
+                                </a>
+
+                                <a
+                                    href="/exames/del/<%= exame._id %>"
+                                    class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Tem certeza que deseja excluir este exame?')">
+                                    Excluir
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    <% }) %>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    <% } %>
+
+</div>
+
+<%- include('../partials/footer') %>

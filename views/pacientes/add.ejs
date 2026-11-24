@@ -1,0 +1,70 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container mt-4">
+    <h2>Cadastrar Paciente</h2>
+    <form action="/pacientes/add" method="POST">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+
+<input
+    id="nome"
+    type="text"
+    class="form-control"
+    name="nome"
+    maxlength="100"
+    required
+    placeholder="Digite o nome completo">
+        </div>
+        <div class="mb-3">
+            <label for="cpf" class="form-label">CPF</label>
+
+<input
+    id="cpf"
+    type="text"
+    class="form-control"
+    name="cpf"
+    maxlength="14"
+    placeholder="000.000.000-00"
+    required>
+        </div>
+        <div class="mb-3">
+           <label for="telefone" class="form-label">Telefone</label>
+
+<input
+    id="telefone"
+    type="text"
+    class="form-control"
+    name="telefone"
+    maxlength="15"
+    placeholder="(51) 99999-9999"
+    required>
+        </div>
+        <div class="mb-3">
+          <label for="dataNascimento" class="form-label">
+    Data de Nascimento
+</label>
+
+<input
+    id="dataNascimento"
+    type="date"
+    class="form-control"
+    name="dataNascimento"
+    max="<%= new Date().toISOString().split('T')[0] %>">
+        </div>
+       <button
+    type="submit"
+    class="btn btn-success me-2">
+    Cadastrar
+</button>
+
+<a
+    href="/pacientes/lst"
+    class="btn btn-secondary">
+    Voltar
+</a>
+      
+    </form>
+</div>
+
+<%- include('../partials/footer') %>

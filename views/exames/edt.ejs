@@ -1,0 +1,73 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container mt-4">
+    <h2 class="mb-4">
+    Editar Exame
+</h2>
+    <form action="/exames/edt/<%= exame._id %>" method="POST">
+        <div class="mb-3">
+            <label for="paciente" class="form-label">Paciente</label>
+
+<select
+    id="paciente"
+    class="form-select"
+    name="paciente"
+    required>
+                <% pacientes.forEach(p => { %>
+                   <option
+    value="<%= p._id %>"
+    <%= p._id.toString() === exame.paciente.toString() ? 'selected' : '' %>>
+                <% }) %>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="tipo" class="form-label">
+    Tipo de Exame
+</label>
+
+<input
+    id="tipo"
+    type="text"
+    class="form-control"
+    name="tipo"
+    value="<%= exame.tipo %>"
+    maxlength="100"
+    required>
+        </div>
+        <div class="mb-3">
+           <label for="data" class="form-label">
+    Data
+</label>
+
+<input
+    id="data"
+    type="date"
+    class="form-control"
+    name="data"
+    value="<%= exame.data ? exame.data.toISOString().split('T')[0] : '' %>"
+    max="<%= new Date().toISOString().split('T')[0] %>"
+    required>
+        </div>
+        <div class="mb-3">
+          <label for="resultado" class="form-label">
+    Resultado
+</label>
+
+<textarea
+    id="resultado"
+    class="form-control"
+    name="resultado"
+    rows="3"
+    maxlength="500"><%= exame.resultado %></textarea>
+        </div>
+        <button
+    type="submit"
+    class="btn btn-primary me-2">
+    Salvar Alterações
+</button>
+        <a href="/exames/lst" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+
+<%- include('../partials/footer') %>

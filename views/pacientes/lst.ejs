@@ -1,0 +1,101 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+
+        <h2>
+            Lista de Pacientes
+            <span class="badge bg-secondary">
+                <%= pacientes.length %>
+            </span>
+        </h2>
+
+        <a href="/pacientes/add" class="btn btn-primary">
+            Novo Paciente
+        </a>
+
+    </div>
+
+    <% if (pacientes.length === 0) { %>
+
+        <div class="alert alert-info">
+            Nenhum paciente cadastrado.
+        </div>
+
+    <% } else { %>
+
+        <div class="table-responsive">
+
+            <table class="table table-striped table-hover align-middle">
+
+                <thead class="table-dark">
+
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Telefone</th>
+                        <th>Data de Nascimento</th>
+                        <th>Ações</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <% pacientes.forEach(paciente => { %>
+
+                        <tr>
+
+                            <td>
+                                <%= paciente.nome %>
+                            </td>
+
+                            <td>
+                                <%= paciente.cpf %>
+                            </td>
+
+                            <td>
+                                <%= paciente.telefone %>
+                            </td>
+
+                            <td>
+                                <%= paciente.dataNascimento
+                                    ? new Date(paciente.dataNascimento)
+                                        .toLocaleDateString('pt-BR')
+                                    : 'Não informado' %>
+                            </td>
+
+                            <td>
+
+                                <a
+                                    href="/pacientes/edt/<%= paciente._id %>"
+                                    class="btn btn-warning btn-sm me-1">
+                                    Editar
+                                </a>
+
+                                <a
+                                    href="/pacientes/del/<%= paciente._id %>"
+                                    class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Tem certeza que deseja excluir este paciente?')">
+                                    Excluir
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    <% }) %>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    <% } %>
+
+</div>
+
+<%- include('../partials/footer') %>

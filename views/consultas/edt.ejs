@@ -1,0 +1,113 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<div class="container mt-4">
+
+   <h2 class="mb-4">
+    Editar Consulta
+</h2>
+
+    <form action="/consultas/edt/<%= consulta._id %>" method="POST">
+
+        <div class="mb-3">
+          <label for="paciente" class="form-label">
+    Paciente
+</label>
+
+<select
+    id="paciente"
+    class="form-select"
+    name="paciente"
+    required>
+
+                <% pacientes.forEach(p => { %>
+
+                    <option
+                        value="<%= p._id %>"
+                        <%= String(p._id) === String(consulta.paciente) ? 'selected' : '' %>>
+                        <%= p.nome %>
+                    </option>
+
+                <% }) %>
+
+            </select>
+        </div>
+
+        <div class="mb-3">
+           <label for="medico" class="form-label">
+    Médico
+</label>
+
+<input
+    id="medico"
+    type="text"
+    class="form-control"
+    name="medico"
+    value="<%= consulta.medico %>"
+    maxlength="100"
+    placeholder="Ex.: Dr. João Silva"
+    required>
+        </div>
+
+        <div class="mb-3">
+       <label for="especialidade" class="form-label">
+    Especialidade
+</label>
+
+<input
+    id="especialidade"
+    type="text"
+    class="form-control"
+    name="especialidade"
+    value="<%= consulta.especialidade %>"
+    maxlength="100"
+    placeholder="Ex.: Cardiologia"
+    required>
+        </div>
+
+        <div class="mb-3">
+            <label for="data" class="form-label">
+    Data da Consulta
+</label>
+
+           <input
+    id="data"
+    type="date"
+    class="form-control"
+    name="data"
+    value="<%= consulta.data ? consulta.data.toISOString().split('T')[0] : '' %>"
+    min="<%= new Date().toISOString().split('T')[0] %>"
+    required>
+        </div>
+
+        <div class="mb-3">
+           <label for="observacoes" class="form-label">
+    Observações
+</label>
+
+<textarea
+    id="observacoes"
+    class="form-control"
+    name="observacoes"
+    rows="4"
+    maxlength="500"
+    placeholder="Observações da consulta"><%= consulta.observacoes || '' %></textarea>
+        </div>
+
+      <button
+    type="submit"
+    class="btn btn-primary me-2">
+            Salvar Alterações
+        </button>
+
+        <a
+            href="/consultas/lst"
+            class="btn btn-secondary">
+            Cancelar
+        </a>
+
+    </form>
+
+</div>
+
+<%- include('../partials/footer') %>
