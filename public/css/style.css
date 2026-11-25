@@ -1,19 +1,222 @@
 
+:root {
+    --cinza-fundo: #d7e9fc;        /* Fundo geral*/
+    --cinza-superficie: #ffffff;   /* Fundo de cards, tabelas e inputs */
+    --cinza-borda: #e2e8f0;        /* Bordas*/
+    --cinza-hover: #f8fafc;        /* Destaque - passar o mouse */
+    --cinza-medio: #64748b;        /* Textos secundários e subtítulos */
+    --cinza-escuro: #1e293b;       /* Navbar, cabeçalhos e títulos */
+    --cinza-texto: #0f172a;        /* Texto principal */
+    --acento-saude: #2563eb;       
+    --acento-saude-hover: #1d4ed8; 
+}
+
+  /* Geral */
 body {
-    background-color: #f8f9fa;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    background-color: var(--cinza-fundo);
+    color: var(--cinza-texto);
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-footer {
-    margin-top: auto;
+h1, h2, h3, h4 {
+    color: var(--cinza-texto);
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
+h1.text-primary {
+    color: var(--cinza-escuro) !important;
+}
+
+/* MENU DE NAVEGAÇÃO */
+.navbar {
+    background-color: var(--cinza-escuro) !important;
+    border-bottom: 1px solid #334155;
+    padding: 0.85rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #ffffff !important;
+}
+
+.navbar .nav-link {
+    color: #cbd5e1 !important;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 0.45rem 0.85rem !important;
+    transition: all 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Ponto navbar */
+.ponto-logo {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--acento-saude); 
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25); 
+} 
+
+/* CARDS*/
 .card {
-    transition: transform 0.2s;
+    background-color: var(--cinza-superficie);
+    border: 1px solid var(--cinza-borda);
+    border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05) !important;
+    transition: all 0.2s ease;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+.row .card:hover {
+    transform: translateY(-4px);
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.08) !important;
 }
+
+/* Títulos dos 3 cards*/
+.card-title.text-primary,
+.card-title.text-success,
+.card-title.text-info {
+    color: var(--cinza-escuro) !important;
+    font-weight: 700;
+}
+
+.card-text {
+    color: var(--cinza-medio);
+}
+
+/* BOTÕES */
+.btn {
+    border-radius: 9px;
+    font-weight: 500;
+    padding: 0.55rem 1rem;
+    transition: all 0.2s ease;
+}
+
+/* Botões principais dos cards e formulários*/
+.btn-primary,
+.btn-success,
+.btn-info {
+    background-color: var(--acento-saude) !important;
+    border-color: var(--acento-saude) !important;
+    color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.btn-success:hover,
+.btn-info:hover {
+    background-color: var(--acento-saude-hover) !important;
+    border-color: var(--acento-saude-hover) !important;
+}
+
+/* Botões secundários*/
+.btn-outline-primary,
+.btn-outline-success,
+.btn-outline-info,
+.btn-outline-secondary {
+    background-color: #ffffff;
+    border-color: #cbd5e1;
+    color: var(--cinza-escuro);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-success:hover,
+.btn-outline-info:hover,
+.btn-outline-secondary:hover {
+    background-color: var(--cinza-fundo);
+    border-color: #94a3b8;
+    color: var(--cinza-texto);
+}
+
+/* Botões de Ação*/
+.btn-warning {
+    background-color: #fef3c7;
+    border-color: #fde68a;
+    color: #92400e !important;
+}
+.btn-warning:hover {
+    background-color: #fde68a;
+    border-color: #fcd34d;
+}
+
+.btn-danger {
+    background-color: #fee2e2;
+    border-color: #fecaca;
+    color: #991b1b !important;
+}
+.btn-danger:hover {
+    background-color: #fecaca;
+    border-color: #fca5a5;
+}
+
+/* TABELAS DAS LISTAGENS*/
+.table-responsive {
+    background-color: var(--cinza-superficie);
+    border: 1px solid var(--cinza-borda);
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: var(--cinza-fundo);
+    color: var(--cinza-medio);
+    border-bottom: 1px solid var(--cinza-borda);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.85rem 1rem;
+}
+
+.table tbody td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--cinza-borda);
+    color: var(--cinza-texto);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    --bs-table-bg-type: #fafbfc;
+}
+
+.table-hover tbody tr:hover > * {
+    --bs-table-bg-state: #f1f5f9;
+}
+
+/* Badge de contagem nas listagens */
+.badge.bg-secondary {
+    background-color: #e2e8f0 !important;
+    color: var(--cinza-escuro) !important;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+/* INPUTS E FILTROS */
+.form-control, .form-select, .input-group-text {
+    background-color: #ffffff;
+    border-color: #cbd5e1;
+    border-radius: 9px;
+    color: var(--cinza-texto);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--acento-saude);
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.15);
+}
+
+/* RODAPÉ */
+footer {
+    background-color: var(--cinza-superficie) !important;
+    border-top: 1px solid var(--cinza-borda) !important;
+    color: var(--cinza-medio);
+}
+
