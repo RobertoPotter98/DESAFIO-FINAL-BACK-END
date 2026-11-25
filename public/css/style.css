@@ -37,7 +37,9 @@ h1.text-primary {
 
 .navbar-brand {
     font-weight: 700;
+    font-size: 1.65rem; /* Aumenta o tamanho da palavra Saúde */
     color: #ffffff !important;
+    letter-spacing: -0.5px;
 }
 
 .navbar .nav-link {
