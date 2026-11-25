@@ -1,11 +1,8 @@
 
 const Exame = require('../models/exame');
-const Paciente = require('../models/paciente'); // exame seja vinculado a um paciente
+const Paciente = require('../models/paciente'); // exame vinculado a um paciente
 
-
-// =====================
 // CREATE
-// =====================
 
 exports.abreAdd = async (req, res) => {
     try {
@@ -34,9 +31,7 @@ exports.add = async (req, res) => {
     }
 };
 
-// =====================
 // READ
-// =====================
 
 exports.lst = async (req, res) => {
     try {
@@ -54,9 +49,7 @@ exports.lst = async (req, res) => {
     }
 };
 
-// =====================
 // UPDATE
-// =====================
 
 exports.abreEdt = async (req, res) => {
     try {
@@ -95,9 +88,7 @@ exports.edt = async (req, res) => {
     }
 };
 
-// =====================
 // DELETE
-// =====================
 
 exports.del = async (req, res) => {
     try {

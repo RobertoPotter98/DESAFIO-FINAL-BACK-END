@@ -2,9 +2,8 @@ const Paciente = require('../models/paciente');
 const Consulta = require('../models/consulta');
 const Exame = require('../models/exame');
 
-// =====================
+
 // CREATE
-// =====================
 
 // Abre a tela de cadastro
 exports.abreAdd = (req, res) => {
@@ -17,8 +16,7 @@ exports.add = async (req, res) => {
         await Paciente.create(req.body);
 
         res.render('pacientes/addok');
-        // ou:
-        // res.redirect('/pacientes/lst');
+       
 
     } catch (error) {
         console.error(error);
@@ -26,9 +24,7 @@ exports.add = async (req, res) => {
     }
 };
 
-// =====================
 // READ
-// =====================
 
 // Lista todos os pacientes
 exports.lst = async (req, res) => {
@@ -46,9 +42,7 @@ exports.lst = async (req, res) => {
     }
 };
 
-// =====================
 // UPDATE
-// =====================
 
 // Abre a tela de edição
 exports.abreEdt = async (req, res) => {
@@ -89,9 +83,7 @@ exports.edt = async (req, res) => {
     }
 };
 
-// =====================
 // DELETE
-// =====================
 
 // Exclui paciente somente se não houver consultas vinculadas
 exports.del = async (req, res) => {

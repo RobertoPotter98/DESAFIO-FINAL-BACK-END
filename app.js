@@ -10,10 +10,10 @@ const consultasRoutes = require('./routes/consultas');
 
 const app = express();
 
-// Conexão com MongoDB
+// Conexão com banco
 connectDB();
 
-// View  - Engine
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
@@ -32,7 +32,7 @@ app.use('/pacientes', pacientesRoutes);
 app.use('/exames', examesRoutes);
 app.use('/consultas', consultasRoutes);
 
-// 404
+// Erro 404
 app.use((req, res) => {
     res.status(404).render('404');
 });

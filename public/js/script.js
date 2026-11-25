@@ -1,7 +1,7 @@
-// Exemplo: Mensagem no console do navegador para confirmar que o script carregou
+// Confirmar que o script carregou
 console.log('Scripts do front-end carregados com sucesso!');
 
-// Exemplo: Máscara simples para formatar CPF automaticamente enquanto digita
+// Formatar CPF automaticamente enquanto digita
 const inputCpf = document.querySelector('input[name="cpf"]');
 if (inputCpf) {
     inputCpf.addEventListener('input', (e) => {
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-// Filtro / Pesquisa instantânea nas tabelas de listagem (lst.ejs)
+// Filtro
 document.addEventListener("DOMContentLoaded", function () {
     const campoBusca = document.getElementById("campoBusca");
     const btnLimparBusca = document.getElementById("btnLimparBusca");
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             linhas.forEach(linha => {
                 const textoLinha = linha.textContent.toLowerCase();
-                // Mostra a linha se ela contiver o texto digitado; caso contrário, esconde
+                
                 if (textoLinha.includes(termo)) {
                     linha.style.display = "";
                 } else {
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (btnLimparBusca && campoBusca) {
         btnLimparBusca.addEventListener("click", function () {
             campoBusca.value = "";
-            campoBusca.dispatchEvent(new Event("keyup")); // Restaura todas as linhas
+            campoBusca.dispatchEvent(new Event("keyup")); //Restaura as linhas
             campoBusca.focus();
         });
     }

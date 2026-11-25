@@ -1,7 +1,8 @@
 const Consulta = require('../models/consulta');
-const Paciente = require('../models/paciente');// consulta seja vinculada a um paciente
+const Paciente = require('../models/paciente');// consulta vinculada a um paciente
 
 // --- CREATE ---
+
 exports.abreAdd = async (req, res) => {
     try {
         const pacientes = await Paciente.find();
@@ -23,6 +24,7 @@ exports.add = async (req, res) => {
 };
 
 // --- READ ---
+
 exports.lst = async (req, res) => {
     try {
         const consultas = await Consulta.find().populate('paciente');
@@ -34,6 +36,7 @@ exports.lst = async (req, res) => {
 };
 
 // --- UPDATE ---
+
 exports.abreEdt = async (req, res) => {
     try {
         const consulta = await Consulta.findById(req.params.id);
@@ -56,6 +59,7 @@ exports.edt = async (req, res) => {
 };
 
 // --- DELETE ---
+
 exports.del = async (req, res) => {
     try {
         await Consulta.findByIdAndDelete(req.params.id);
