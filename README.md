@@ -1,22 +1,25 @@
 
--Tema:
+# Ponto Saúde
+**Sistema Web Comunitário de Agendamento de Saúde — Desafio Final Back-End**
 
-Ponto Saúde - Sistema Web Comunitário de Agendamento de Saúde — Desafio Final Back-End
+> *"A saúde da nossa comunidade em boas mãos."*
 
--Propósito:
+## Propósito
+Aplicação web desenvolvida como atividade final da disciplina de **Desenvolvimento Back-End** (TSIaD – Semestre 4) para gerenciamento comunitário de pacientes, exames e consultas médicas.
 
-Aplicação web desenvolvida como atividade final da disciplina de Desenvolvimento Back-End (TSIaD - Semestre 4) para gerenciamento de pacientes, exames, consultas médicas, entre outros.
+## Funcionalidades
+* **Dashboard (`/`):** Página inicial administrativa com acesso rápido às principais funcionalidades do sistema.
+* **Pacientes (`/pacientes`):** Cadastro, listagem, edição, exclusão e pesquisa de pacientes.
+* **Exames (`/exames`):** Registro, listagem, edição, exclusão e filtro de exames vinculados aos pacientes.
+* **Consultas (`/consultas`):** Agendamento, listagem, edição, exclusão e pesquisa de consultas médicas.
+* **Filtros e Validações:** Mecanismos de pesquisa nas tabelas de listagem e validação de formulários.
 
--Funcionalidades (Projeto Inicial):
+## Tecnologias Utilizadas
+* **Back-End:** Node.js & Express
+* **Template Engine:** EJS
+* **Front-End:** HTML5, CSS3, JavaScript & Bootstrap 5
+* **Banco de Dados:** MongoDB
+* **Hospedagem:** Render
 
-Dashboard: Tela inicial com visão geral do sistema (`/`).
-Pacientes: Cadastro e gerenciamento de pacientes (`/pacientes`).
-Exames: Registro e controle de exames (`/exames`).
-Consultas: Agendamento e acompanhamento de consultas (`/consultas`).
-
--Tecnologias Utilizadas:
-
-Node.js & Express
-Template Engine: EJS
-Banco de Dados: MongoDB
-Hsopedagem: Render
+## Autor
+* **Roberto G. Potter** – Polo Sobradinho (TSIaD – Semestre 4)
