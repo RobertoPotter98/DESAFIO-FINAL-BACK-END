@@ -63,13 +63,14 @@
         </div>
 
         <div class="mb-3">
-          <label for="data" class="form-label">
-    Data da Consulta
-</label>
+   <label for="data" class="form-label">Data da Consulta</label>
 
 <input
     id="data"
-    type="date"
+    type="text"
+    placeholder="dd/mm/aaaa"
+    onfocus="(this.type='date')"
+    onblur="if(!this.value)this.type='text'"
     class="form-control"
     name="data"
     min="<%= new Date().toISOString().split('T')[0] %>"

@@ -26,6 +26,21 @@
 
     <% } else { %>
 
+        <!-- Barra de Pesquisa / Filtro -->
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text bg-white">🔍</span>
+                    <input 
+                        type="text" 
+                        id="campoBusca" 
+                        class="form-control" 
+                        placeholder="Pesquisar por nome, CPF, telefone ou data...">
+                    <button class="btn btn-outline-secondary" type="button" id="btnLimparBusca">Limpar</button>
+                </div>
+            </div>
+        </div>
+
         <div class="table-responsive">
 
             <table class="table table-striped table-hover align-middle">
@@ -33,11 +48,11 @@
                 <thead class="table-dark">
 
                     <tr>
-                        <th>Nome</th>
-                        <th>CPF</th>
-                        <th>Telefone</th>
-                        <th>Data de Nascimento</th>
-                        <th>Ações</th>
+                        <th>Nome:</th>
+                        <th>CPF:</th>
+                        <th>Telefone:</th>
+                        <th>Data de Nascimento:</th>
+                        <th>Ações:</th>
                     </tr>
 
                 </thead>
@@ -63,7 +78,7 @@
                             <td>
                                 <%= paciente.dataNascimento
                                     ? new Date(paciente.dataNascimento)
-                                        .toLocaleDateString('pt-BR')
+                                        .toLocaleDateString('pt-BR', { timeZone: 'UTC' })
                                     : 'Não informado' %>
                             </td>
 

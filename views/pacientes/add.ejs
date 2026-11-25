@@ -41,13 +41,16 @@
     required>
         </div>
         <div class="mb-3">
-          <label for="dataNascimento" class="form-label">
+<label for="dataNascimento" class="form-label">
     Data de Nascimento
 </label>
 
 <input
     id="dataNascimento"
-    type="date"
+    type="text"
+    placeholder="dd/mm/aaaa"
+    onfocus="(this.type='date')"
+    onblur="if(!this.value)this.type='text'"
     class="form-control"
     name="dataNascimento"
     max="<%= new Date().toISOString().split('T')[0] %>">

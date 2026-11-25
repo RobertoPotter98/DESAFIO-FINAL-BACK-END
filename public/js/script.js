@@ -12,3 +12,56 @@ if (inputCpf) {
         e.target.value = valor;
     });
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const campos = document.querySelectorAll("input[required], select[required], textarea[required]");
+
+    campos.forEach(campo => {
+        campo.addEventListener("invalid", function () {
+            if (campo.validity.valueMissing) {
+                if (campo.tagName === "SELECT") {
+                    campo.setCustomValidity("Por favor, selecione um item da lista.");
+                } else {
+                    campo.setCustomValidity("Por favor, preencha este campo.");
+                }
+            }
+        });
+
+        campo.addEventListener("input", function () {
+            campo.setCustomValidity("");
+        });
+        
+        campo.addEventListener("change", function () {
+            campo.setCustomValidity("");
+        });
+    });
+});
+// Filtro / Pesquisa instantânea nas tabelas de listagem (lst.ejs)
+document.addEventListener("DOMContentLoaded", function () {
+    const campoBusca = document.getElementById("campoBusca");
+    const btnLimparBusca = document.getElementById("btnLimparBusca");
+
+    if (campoBusca) {
+        campoBusca.addEventListener("keyup", function () {
+            const termo = this.value.toLowerCase().trim();
+            const linhas = document.querySelectorAll("table tbody tr");
+
+            linhas.forEach(linha => {
+                const textoLinha = linha.textContent.toLowerCase();
+                // Mostra a linha se ela contiver o texto digitado; caso contrário, esconde
+                if (textoLinha.includes(termo)) {
+                    linha.style.display = "";
+                } else {
+                    linha.style.display = "none";
+                }
+            });
+        });
+    }
+
+    if (btnLimparBusca && campoBusca) {
+        btnLimparBusca.addEventListener("click", function () {
+            campoBusca.value = "";
+            campoBusca.dispatchEvent(new Event("keyup")); // Restaura todas as linhas
+            campoBusca.focus();
+        });
+    }
+});

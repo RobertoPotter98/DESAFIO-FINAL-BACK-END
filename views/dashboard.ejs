@@ -1,37 +1,38 @@
+
 <%- include('./partials/header') %>
 <%- include('./partials/navbar') %>
 
 <div class="container mt-5">
-   <div class="text-center mb-5">
+     <header class="text-center mb-4">
+        <h1 class="display-4 fw-bold text-primary mb-2">
+            Ponto Saúde
+        </h1>
+        
+        <p class="fs-5 fw-semibold text-dark mb-3">
+            A saúde da nossa comunidade em boas mãos.
+        </p>
 
-    <h1 class="display-4 fw-bold text-primary">
-        Sistema de Gestão Clínica
-    </h1>
-
-    <p class="lead text-muted">
-        Selecione um módulo abaixo para gerenciar os registros.
-    </p>
-
-    <p class="text-secondary">
-        Bem-vindo ao sistema de gestão clínica. Utilize os módulos abaixo para cadastrar e gerenciar pacientes, consultas e exames.
-    </p>
+        <p class="lead text-muted">
+           Olá! Bem-vindo ao Ponto Saúde. Por onde você gostaria de começar hoje?
+        </p>
+    </header>
 
 </div>
 
     <div class="row g-4">
-        <!-- Card Pacientes -->
-        <div class="col-md-4">
-            <div class="card h-100 shadow-sm text-center">
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <div>
+    <!-- Card Pacientes -->
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm text-center">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
                       <h4 class="card-title text-primary">
     👤 Pacientes
 </h4>
                         <p class="card-text">Cadastre novos pacientes, consulte dados e atualize informações.</p>
                     </div>
                     <div class="mt-3">
-                        <a href="/pacientes/lst" class="btn btn-primary w-100 mb-2">Ver Pacientes</a>
-                        <a href="/pacientes/add" class="btn btn-outline-primary w-100">Novo Paciente</a>
+                        <a href="/pacientes/lst" class="btn btn-primary w-100 mb-2">Pacientes cadastrados</a>
+                        <a href="/pacientes/add" class="btn btn-outline-primary w-100">Adicionar Paciente</a>
                     </div>
                 </div>
             </div>
