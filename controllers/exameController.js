@@ -1,6 +1,6 @@
 
 const Exame = require('../models/exame');
-const Paciente = require('../models/paciente'); // exame vinculado a um paciente
+const Paciente = require('../models/paciente'); //faz com que o exame fique vinculado a um paciente
 
 // CREATE
 

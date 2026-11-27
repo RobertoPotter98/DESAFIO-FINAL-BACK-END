@@ -10,7 +10,7 @@ console.log(
 );
     } catch (error) {
         console.error('Erro ao conectar ao MongoDB:', error.message);
-        process.exit(1); // Encerra a aplicação se o banco falhar
+        process.exit(1); // Encerrar
     }
 };
 

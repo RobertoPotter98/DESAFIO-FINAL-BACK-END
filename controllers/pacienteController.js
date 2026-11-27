@@ -44,7 +44,7 @@ exports.lst = async (req, res) => {
 
 // UPDATE
 
-// Abre a tela de edição
+// Abre a edição
 exports.abreEdt = async (req, res) => {
     try {
 
@@ -85,7 +85,7 @@ exports.edt = async (req, res) => {
 
 // DELETE
 
-// Exclui paciente somente se não houver consultas vinculadas
+// Exclui o paciente somente se não houver consultas vinculadas
 exports.del = async (req, res) => {
     try {
 

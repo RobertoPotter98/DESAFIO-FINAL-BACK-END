@@ -1,5 +1,5 @@
 const Consulta = require('../models/consulta');
-const Paciente = require('../models/paciente');// consulta vinculada a um paciente
+const Paciente = require('../models/paciente');// faz com que a consulta fique vinculada a um paciente
 
 // --- CREATE ---
 

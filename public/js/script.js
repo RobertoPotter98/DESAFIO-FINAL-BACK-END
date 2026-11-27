@@ -1,7 +1,7 @@
 // Confirmar que o script carregou
 console.log('Scripts do front-end carregados com sucesso!');
 
-// Formatar CPF automaticamente enquanto digita
+// Formatar CPF automaticamente 
 const inputCpf = document.querySelector('input[name="cpf"]');
 if (inputCpf) {
     inputCpf.addEventListener('input', (e) => {
